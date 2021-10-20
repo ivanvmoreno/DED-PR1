@@ -1,0 +1,18 @@
+TAD SA_C19 {
+    void addUser(String user_id, String user_name, String surname, Date birthdate, CovidCertificate cert);
+    void addOrganization(String org_id, String name, String description);
+    void addApplication(String app_id, String event_id, String org_id, Date event_date, boolean online, short capacity);
+    void approveApplication(String app_id, Date processing_date);
+    void rejectApplication(String app_id, Date processing_date, String reason);
+    void purchaseTicket(String user_id, String event_id);
+    void assignSeat(String event_id, String seat_id);
+    short totalRejectedApplications();
+    float avgRejectedApplications();
+    Event[] getOrgEvents(String org_id);
+    Event[] getAllEvents();
+    Event[] getUserActivities(String user_id);
+    void addRating(String user_id, String act_id, byte num_rating, String desc_rating);
+    Rating[] getActivityRatings(String event_id);
+    User mostActiveTester();
+    Event mostValuedActivity();
+}
